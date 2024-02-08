@@ -1,0 +1,38 @@
+.tip-calculator-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.tip-calculator-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.label-input-group {
+    margin-bottom: 15px;
+}
+
+.label-input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.label-input-group input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.result-container {
+    margin-top: 20px;
+}
+
+.result-container p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
