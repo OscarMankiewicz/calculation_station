@@ -16,7 +16,7 @@
   .layout {
     display: grid;
     grid-template-rows: 40px auto 80px 40px;
-    grid-template-columns: 160px auto auto;
+    grid-template-columns: calc(160px + 80px) auto auto;
     grid-template-areas: 
       'header header header'
       'nav main main' 
@@ -47,6 +47,7 @@ nav {
   flex-direction: column;
   grid-area: nav;
   background-color: #f6c356;
+  width: calc(160px + 80px);
 }
 
 main {
