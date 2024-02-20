@@ -21,32 +21,21 @@ const DistanceConverter = () => {
     const handleConvert = () => {
         let convertedValue;
 
-        // Convert from meters
-        if (fromUnit === "meters") {
-            if (toUnit === "kilometers") {
-                convertedValue = parseFloat(inputValue) / 1000;
-            } else if (toUnit === "miles") {
-                convertedValue = parseFloat(inputValue) / 1609.344;
-            }
-        }
-        // Convert from kilometers
-        else if (fromUnit === "kilometers") {
-            if (toUnit === "meters") {
-                convertedValue = parseFloat(inputValue) * 1000;
-            } else if (toUnit === "miles") {
-                convertedValue = parseFloat(inputValue) / 1.609344;
-            }
-        }
-        // Convert from miles
-        else if (fromUnit === "miles") {
-            if (toUnit === "meters") {
-                convertedValue = parseFloat(inputValue) * 1609.344;
-            } else if (toUnit === "kilometers") {
-                convertedValue = parseFloat(inputValue) * 1.609344;
-            }
-        }
+        const units = {
+            meters: 1,
+            kilometers: 1000,
+            miles: 1609.34,
+            cm: 0.01,
+            mm: 0.001,
+            inches: 0.0254,
+            feet: 0.3048,
+            yards: 0.9144,
+        };
 
-        setResult(convertedValue.toFixed(2));
+        const fromUnitValue = parseFloat(inputValue) * units[fromUnit];
+        convertedValue = fromUnitValue / units[toUnit];
+
+        setResult(convertedValue.toFixed(2)); 
     };
 
     return (
@@ -63,9 +52,14 @@ const DistanceConverter = () => {
                     <option value="meters">Meters</option>
                     <option value="kilometers">Kilometers</option>
                     <option value="miles">Miles</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="yards">Yards</option>
                 </select>
             </div>
-            <div className="conversion-arrow">&#62;</div>
+            <div className="conversion-arrow">=&#62;</div>
             <div className="input-group">
                 <input
                     type="text"
@@ -76,6 +70,11 @@ const DistanceConverter = () => {
                     <option value="meters">Meters</option>
                     <option value="kilometers">Kilometers</option>
                     <option value="miles">Miles</option>
+                    <option value="cm">Centimeters</option>
+                    <option value="mm">Millimeters</option>
+                    <option value="inches">Inches</option>
+                    <option value="feet">Feet</option>
+                    <option value="yards">Yards</option>
                 </select>
             </div>
             <button onClick={handleConvert}>Convert</button>
