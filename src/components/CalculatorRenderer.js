@@ -6,6 +6,9 @@ import MassConverter from './MassConverter';
 import HypotenuseCalculator from './HypotenuseCalculator';
 import SpeedConverter from './SpeedConverter';
 import DigitalStorageConverter from './DigitalStorageConverter';
+import AreaConverter from './AreaConverter';
+import TemperatureConverter from './TemperatureConverter';
+import TimeConverter from './TimeConverter';
 
 const renderCalculator = (selectedCalculator) => {
     switch (selectedCalculator) {
@@ -23,6 +26,12 @@ const renderCalculator = (selectedCalculator) => {
             return <DigitalStorageConverter />;
         case 'hypotenuse':
             return <HypotenuseCalculator />;
+        case 'area':
+            return <AreaConverter />;
+        case 'temperature':
+            return <TemperatureConverter />;
+        case 'time':
+            return <TimeConverter />;
         default:
             return null;
     }
